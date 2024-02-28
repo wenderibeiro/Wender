@@ -1,0 +1,124 @@
+/* define o layout principal do body para ficar flex, centraliza seu conteúdo horizontal e vertical */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(51deg, hsl(195, 85%, 20%), hsl(0, 79%, 19%), hsl(0, 96%, 33%));
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: serif;
+}
+
+/* define a posição, tamanho e alinhamento do container principal */
+.container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estiliza os spam dentro do .container */
+.container span {
+    position: absolute;
+    inset: 0;
+    border: 2px solid cornsilk;
+    transition: 0.5s;
+}
+
+.container span:nth-child(1) {
+    border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
+    animation: animate 4s linear infinite;
+}
+
+.container span:nth-child(2) {
+    border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+    animation: animate2 10s linear infinite;
+}
+
+.container span:nth-child(3) {
+    border: 6px solid red; /* exemplo - substitua pelo valor correto */
+    filter: drop-shadow(0 0 20px red); /* exemplo - substitua pelo valor correto */
+}
+
+.container:hover span {
+    border: 6px solid var(--clr);
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.form-container {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-container h2 {
+    font-size: 2em;
+    color: rgb(241, 241, 241);
+}
+
+.input-container input {
+    position: relative;
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 40px; /* corrigido */
+    font-size: 1.2em;
+    color: antiquewhite;
+    box-shadow: none;
+    outline: none;
+}
+
+.input-container input:focus {
+    outline: none;
+    border-color: aliceblue;
+}
+
+.input-container input[type="submit"] {
+    width: 100%;
+    background-color: rgb(11, 11, 53);
+    background: -webkit-gradient(to right, #240, #586, #786); /* corrigido */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.link-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.link-container a {
+    color: aquamarine;
+    text-decoration: none;
+}
